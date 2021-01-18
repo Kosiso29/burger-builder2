@@ -11,7 +11,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../store/actions/index';
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
 
     state = {
         // totalPrice: 4,
@@ -22,7 +22,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount () {
-        console.log(this.props);
+        // console.log(this.props);
         // axios.get('https://react-my-burger-bf94a-default-rtdb.firebaseio.com/ingredients.json')
         //     .then(response => {
         //         this.setState({ingredients: response.data})
