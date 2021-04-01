@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from "../../axios-orders";
+// import axios from "../../axios-orders";
 
 export const addIngredient = (name) => {
     return {
@@ -29,18 +29,21 @@ export const fetchIngredientsFailed = () => {
 };
 
 export const initIngredients = () => {
-    return dispatch => {
-        axios.get('https://react-my-burger-bf94a-default-rtdb.firebaseio.com/ingredients.json')
-            .then(response => {
-                dispatch(setIngredients(response.data));
-                // this.setState({ingredients: response.data})
-                // if (this.state.ingredients.meat !== 0 || this.state.ingredients.salad !== 0 || this.state.ingredients.bacon !== 0 || this.state.ingredients.cheese !== 0 ) {
-                //     this.setState({purchasable: true});
-                // }
-            })
-            .catch(error => {
-                dispatch(fetchIngredientsFailed());
-                // this.setState({error: true});
-            });
+    return {
+        type: actionTypes.INIT_INGREDIENTS
     };
+    // return dispatch => {
+    //     axios.get('https://react-my-burger-bf94a-default-rtdb.firebaseio.com/ingredients.json')
+    //         .then(response => {
+    //             dispatch(setIngredients(response.data));
+    //             // this.setState({ingredients: response.data})
+    //             // if (this.state.ingredients.meat !== 0 || this.state.ingredients.salad !== 0 || this.state.ingredients.bacon !== 0 || this.state.ingredients.cheese !== 0 ) {
+    //             //     this.setState({purchasable: true});
+    //             // }
+    //         })
+    //         .catch(error => {
+    //             dispatch(fetchIngredientsFailed());
+    //             // this.setState({error: true});
+    //         });
+    // };
 };
